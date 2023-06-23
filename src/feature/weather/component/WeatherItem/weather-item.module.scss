@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 6px;
+    padding: 12px 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    }
+}
+
+.date {
+    display: flex;
+}
+
+.image {
+    max-width: 6rem;
+}
+
+.description {
+    font-size: 0.75rem;
+}
+
+.tempContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    gap: 0.75rem;
+    font-size: 0.7rem;
+}
+
+.temp {
+    &.min {
+        color: gray;
+    }
+}

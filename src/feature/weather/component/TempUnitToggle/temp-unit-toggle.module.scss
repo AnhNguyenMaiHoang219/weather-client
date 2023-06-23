@@ -1,0 +1,15 @@
+$border-radius: 16px;
+
+:global(.temp-unit-toggle).toggle {
+    :global(.ant-radio-button-wrapper) {
+        &:first-child {
+            border-start-start-radius: $border-radius;
+            border-end-start-radius: $border-radius;
+        }
+
+        &:last-child {
+            border-start-end-radius: $border-radius;
+            border-end-end-radius: $border-radius;
+        }
+    }
+}
