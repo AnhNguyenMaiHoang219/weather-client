@@ -1,0 +1,30 @@
+@import 'variable.module';
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $nav-bar__height;
+    padding: 1rem 3rem;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    width: 4rem;
+    height: 4rem;
+}
+
+.logoName {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0.5rem;
+}
+
+.refreshButton {
+    margin-right: 1rem;
+}
