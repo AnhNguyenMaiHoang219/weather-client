@@ -5,8 +5,8 @@ import format from 'date-fns/format';
 import isToday from 'date-fns/isToday';
 import Image from 'next/image';
 import { useState } from 'react';
-import { DEGREE_SYMBOL } from '../../constant';
 import { getWeatherConditionDescription, getWeatherConditionImage } from '../../util';
+import { useWeatherStore } from '../../weather-store';
 import { WeatherItemDetail } from '../WeatherItemDetail';
 import styles from './weather-item.module.scss';
 
@@ -36,6 +36,7 @@ export const WeatherItem = ({
     const displayDate = format(date, 'EEE, MMM dd');
     const weatherStatusImageUrl = getWeatherConditionImage(weatherCode, 'large');
     const weatherStatusDescription = getWeatherConditionDescription(weatherCode);
+    const temperatureSymbol = useWeatherStore(state => state.temperatureSymbol);
 
     function onClick() {
         setDetailModalShown(true);
@@ -44,20 +45,25 @@ export const WeatherItem = ({
     return (
         <>
             <div className={`${styles.container} ${today ? styles.active : ''}`} onClick={onClick}>
-                <h6 className={styles.date}>{today ? 'Today' : displayDate}</h6>
-                <Image
-                    className={styles.image}
-                    src={weatherStatusImageUrl}
-                    alt={weatherStatusDescription}
-                    title={weatherStatusDescription}
-                    width={96}
-                    height={96}
-                />
+                <div className={styles.frontContainer}>
+                    <h6 className={styles.date}>{today ? 'Today' : displayDate}</h6>
+                    <Image
+                        className={styles.image}
+                        src={weatherStatusImageUrl}
+                        alt={weatherStatusDescription}
+                        title={weatherStatusDescription}
+                        width={96}
+                        height={96}
+                        unoptimized
+                    />
+                </div>
                 <Paragraph className={styles.description}>{weatherStatusDescription}</Paragraph>
                 <div className={styles.temperatureContainer}>
-                    <Paragraph className={styles.temp}>{maxTemperature + DEGREE_SYMBOL}</Paragraph>
+                    <Paragraph className={styles.temp}>
+                        {maxTemperature + temperatureSymbol}
+                    </Paragraph>
                     <Paragraph className={`${styles.temp} ${styles.min}`}>
-                        {minTemperature + DEGREE_SYMBOL}
+                        {minTemperature + temperatureSymbol}
                     </Paragraph>
                 </div>
             </div>

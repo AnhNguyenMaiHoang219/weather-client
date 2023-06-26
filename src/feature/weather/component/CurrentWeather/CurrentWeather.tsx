@@ -5,6 +5,7 @@ import format from 'date-fns/format';
 import Image from 'next/image';
 import { getWeatherConditionDescription, getWeatherConditionImage } from '../../util';
 import { useWeatherStore } from '../../weather-store';
+import { Loader } from './Loader';
 import styles from './current-weather.module.scss';
 
 const { Text, Title, Paragraph } = Typography;
@@ -17,7 +18,7 @@ export const CurrentWeather = ({}: Props) => {
     const windSpeedUnit = useWeatherStore(state => state.windSpeedUnit);
 
     if (!currentWeather) {
-        return <></>;
+        return <Loader />;
     }
 
     const { temperature, windSpeed, weatherCode, isDay } = currentWeather;
@@ -35,12 +36,15 @@ export const CurrentWeather = ({}: Props) => {
                 title={weatherStatusDescription}
                 width={256}
                 height={256}
+                unoptimized
             />
             <Text className={styles.temperature}>
                 <span className={styles.number}>{temperature}</span>
                 <span className={styles.symbol}>{temperatureSymbol}</span>
             </Text>
-            <h6 className={styles.date}>{displayDate}</h6>
+            <Title className={styles.date} level={5}>
+                {displayDate}
+            </Title>
             <Paragraph className={styles.description}>{weatherStatusDescription}</Paragraph>
 
             <Divider />
@@ -53,9 +57,7 @@ export const CurrentWeather = ({}: Props) => {
                     width={48}
                     height={48}
                 />
-                <Text className={styles.data}>
-                    Wind speed: {windSpeed} {windSpeedUnit}
-                </Text>
+                <Text className={styles.data}>Wind speed: {windSpeed + windSpeedUnit}</Text>
             </div>
         </div>
     );
