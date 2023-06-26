@@ -1,0 +1,21 @@
+$xs: 0;
+$sm: 600;
+$md: 960;
+$lg: 1280;
+$xl: 1920;
+
+$breakpoints: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+);
+
+:export {
+    xs: $xs;
+    sm: $sm;
+    md: $md;
+    lg: $lg;
+    xl: $xl;
+}

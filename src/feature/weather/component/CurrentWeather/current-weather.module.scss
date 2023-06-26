@@ -7,8 +7,8 @@
 }
 
 .weatherConditionImage {
+    align-self: center;
     max-width: 16rem;
-    margin-left: -2rem;
 }
 
 :global(.ant-typography).temperature {

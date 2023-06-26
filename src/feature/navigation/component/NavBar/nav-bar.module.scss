@@ -1,3 +1,4 @@
+@import 'mixin.module';
 @import 'variable.module';
 
 .container {
@@ -6,6 +7,14 @@
     align-items: center;
     height: $nav-bar__height;
     padding: 1rem 3rem;
+
+    @include respond-below(sm) {
+        padding: 0.5rem 1rem;
+    }
+
+    @include respond-below(lg) {
+        padding: 0.5rem 1rem;
+    }
 }
 
 .logoContainer {
@@ -17,12 +26,22 @@
     display: flex;
     width: 4rem;
     height: 4rem;
+
+    @include respond-below(sm) {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
 }
 
 .logoName {
+    margin: 0 0.5rem;
     font-size: 1.8rem;
     font-weight: 700;
-    margin: 0 0.5rem;
+
+    @include respond-below(sm) {
+        margin: 0 0.2rem;
+        font-size: 1.2rem;
+    }
 }
 
 .refreshButton {

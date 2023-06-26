@@ -1,9 +1,68 @@
 @import 'variable.module';
+@import 'mixin.module';
 
-.main {
+$side-bar__min-width: 250px;
+
+.wrapper {
     display: flex;
     flex-direction: row;
     padding: 0.5rem 3rem 3rem;
     min-height: calc(100vh - $nav-bar__height);
     justify-content: space-between;
+
+    @include respond-below(lg) {
+        padding: 0.5rem 1rem 1rem;
+    }
+
+    @include respond-below(sm) {
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0.5rem 1rem 1rem;
+    }
+}
+
+.sideBar,
+.main {
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    min-width: $side-bar__min-width;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+
+    @include respond-below(sm) {
+        padding: 1rem;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: calc(80% - 3rem);
+    margin-left: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    gap: 2rem;
+
+    @include respond-below(lg) {
+        width: calc(100% - $side-bar__min-width - 1rem);
+        margin-left: 1rem;
+    }
+
+    @include respond-below(sm) {
+        width: 100%;
+        margin-top: 1rem;
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+}
+
+.weeklyDataContainer,
+.hourlyDataContainer {
+    flex-basis: 50%;
 }

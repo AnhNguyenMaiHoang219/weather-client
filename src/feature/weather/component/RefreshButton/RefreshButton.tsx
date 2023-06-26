@@ -21,7 +21,6 @@ export const RefreshButton = ({ className, ...props }: ButtonProps) => {
         <Tooltip placement="bottom" title="Refresh weather data">
             <Button
                 className={className}
-                type="default"
                 size="large"
                 icon={<SyncOutlined />}
                 loading={isLoadingWeatherData}
