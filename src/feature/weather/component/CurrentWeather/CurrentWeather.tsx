@@ -33,8 +33,9 @@ export const CurrentWeather = ({}: Props) => {
                 src={weatherStatusImageUrl}
                 alt={weatherStatusDescription}
                 title={weatherStatusDescription}
-                width={200}
-                height={200}
+                width={256}
+                height={256}
+                unoptimized
             />
             <Text className={styles.temperature}>
                 <span className={styles.number}>{temperature}</span>
