@@ -1,0 +1,9 @@
+$primary-color: #1677ff;
+$primary-color-50: rgba(22, 119, 255, 0.5);
+
+$nav-bar__height: 5rem;
+
+:export {
+    primaryColor: $primary-color;
+    primaryColor50: $primary-color-50;
+}

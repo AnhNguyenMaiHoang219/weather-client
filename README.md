@@ -15,10 +15,11 @@ A simple Web application displaying weather forecast data including hourly chart
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction/): React state management library
 - [date-fns](https://date-fns.org/): Date utility library
 
-## Integration services
+## Integration services and credits
 
 - [Open-Meteo](https://open-meteo.com/en/docs): Weather Forecast API provider
 - [OpenWeather](https://openweathermap.org/weather-conditions): Weather condition codes and icons provider
+- [Meteocons](https://basmilius.github.io/weather-icons/index-fill.html): Weather icons by [Bas Milius](https://bas.dev/)
 
 ## Installation instruction
 
@@ -37,7 +38,7 @@ cd weather-client
 - Install dependencies
 
 ```sh
-npm install
+npm install -f
 ```
 
 ## Running the application

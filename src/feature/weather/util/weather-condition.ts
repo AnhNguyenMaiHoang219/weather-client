@@ -1,11 +1,11 @@
 import { WEATHER_CODE_TO_WEATHER_ICON } from '../constant/weather-code';
 import { OpenMeteoWeatherCode as WeatherCode } from '../type';
 
-function getWeatherStatusImage(code: WeatherCode, size: 'small' | 'large', isDay = true) {
+function getWeatherConditionImage(code: WeatherCode, size: 'small' | 'large', isDay = true) {
     const weatherIconObject = WEATHER_CODE_TO_WEATHER_ICON.get(code);
 
     if (!weatherIconObject) {
-        return;
+        return '';
     }
 
     const iconSize = size == 'small' ? '@2x' : '@4x';
@@ -15,15 +15,14 @@ function getWeatherStatusImage(code: WeatherCode, size: 'small' | 'large', isDay
     return `https://openweathermap.org/img/wn/${iconPath}`;
 }
 
-function getWeatherStatusDescription(code: WeatherCode, isDay = true) {
+function getWeatherConditionDescription(code: WeatherCode, isDay = true) {
     const weatherIconObject = WEATHER_CODE_TO_WEATHER_ICON.get(code);
 
     if (!weatherIconObject) {
-        return 'No description';
+        return 'Unknown description';
     }
 
     return isDay ? weatherIconObject.description.day : weatherIconObject.description.night;
 }
 
-export { getWeatherStatusDescription, getWeatherStatusImage };
-
+export { getWeatherConditionDescription, getWeatherConditionImage };

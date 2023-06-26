@@ -1,6 +1,6 @@
 import { NavBar } from '@/feature/navigation/component';
-import { HourlyChart, WeeklyTable } from '@/feature/weather/component';
-import styles from './page.module.css';
+import { CurrentWeather, HourlyChart, WeeklyTable } from '@/feature/weather/component';
+import styles from './page.module.scss';
 
 export default function Home() {
     return (
@@ -8,8 +8,7 @@ export default function Home() {
             <NavBar />
             <div className={styles.main}>
                 <div className="side-bar">
-                    <h1>Today</h1>
-                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" />
+                    <CurrentWeather />
                 </div>
                 <div className="main-view">
                     <div className="hour-chart-container">

@@ -1,31 +1,34 @@
 'use client';
 
-import { useWeatherStore } from '@/feature/weather/store';
-import { toTempSymbol } from '@/feature/weather/util';
-import { Radio, RadioChangeEvent } from 'antd';
+import { toTemperatureSymbol } from '@/feature/weather/util';
+import { useWeatherStore } from '@/feature/weather/weather-store';
+import { Radio, RadioChangeEvent, RadioGroupProps, Tooltip } from 'antd';
 import styles from './temp-unit-toggle.module.scss';
 
-export const TempUnitToggle = () => {
-    const tempUnit = useWeatherStore(state => state.tempUnit);
-    const setTempUnit = useWeatherStore(state => state.setTempUnit);
+export const TempUnitToggle = ({ className, ...props }: RadioGroupProps) => {
+    const temperatureUnit = useWeatherStore(state => state.temperatureUnit);
+    const setTemperatureUnit = useWeatherStore(state => state.setTemperatureUnit);
 
     const options = [
-        { label: toTempSymbol('celsius'), value: 'celsius' },
-        { label: toTempSymbol('fahrenheit'), value: 'fahrenheit' },
+        { label: toTemperatureSymbol('celsius'), value: 'celsius' },
+        { label: toTemperatureSymbol('fahrenheit'), value: 'fahrenheit' },
     ];
 
     const onChange = ({ target: { value } }: RadioChangeEvent) => {
-        setTempUnit(value);
+        setTemperatureUnit(value);
     };
 
     return (
-        <Radio.Group
-            className={`temp-unit-toggle ${styles.toggle}`}
-            options={options}
-            onChange={onChange}
-            value={tempUnit}
-            optionType="button"
-            buttonStyle="solid"
-        />
+        <Tooltip placement="bottomRight" title="Switch temperature unit" mouseEnterDelay={0.3}>
+            <Radio.Group
+                className={`temp-unit-toggle ${styles.toggle} ${className}`}
+                options={options}
+                onChange={onChange}
+                value={temperatureUnit}
+                optionType="button"
+                buttonStyle="solid"
+                {...props}
+            />
+        </Tooltip>
     );
 };

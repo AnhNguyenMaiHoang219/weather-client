@@ -1,7 +1,9 @@
+@import 'variable.module';
+
 .main {
     display: flex;
     flex-direction: row;
     padding: 0.5rem 3rem 3rem;
-    min-height: calc(100vh - 64px);
+    min-height: calc(100vh - $nav-bar__height);
     justify-content: space-between;
 }

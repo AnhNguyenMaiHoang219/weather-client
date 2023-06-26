@@ -1,18 +1,17 @@
-import { RootStyleRegistry } from '@/config/antd';
-import { Inter } from 'next/font/google';
-import './globals.css';
+import '@/feature/common/style/globals.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+import { RootStyleRegistry } from '@/config/ant-design';
+import { DEFAULT_FONT } from '@/config/typography';
 
 export const metadata = {
-    title: 'Weather App',
-    description: 'Weather App description',
+    title: 'Weather app',
+    description: 'Weather app description',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body className={DEFAULT_FONT.className}>
                 <RootStyleRegistry>{children}</RootStyleRegistry>
             </body>
         </html>
