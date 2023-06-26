@@ -20,7 +20,7 @@ A simple Web application displaying current weather and weather forecast data in
 - [Open-Meteo](https://open-meteo.com/en/docs): Weather Forecast API provider
 - [OpenWeather](https://openweathermap.org/weather-conditions): Weather condition codes and icons provider
 - [Meteocons](https://basmilius.github.io/weather-icons/index-fill.html): Weather icons by [Bas Milius](https://bas.dev/)
-- [Scss mixins](https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/): Very useful Sass mixins for responsive styling
+- [Sass mixins](https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/): Very useful Sass mixins for responsive styling
 
 ## Installation instruction
 
