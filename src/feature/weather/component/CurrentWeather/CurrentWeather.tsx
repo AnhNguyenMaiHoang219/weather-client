@@ -56,9 +56,7 @@ export const CurrentWeather = ({}: Props) => {
                     width={48}
                     height={48}
                 />
-                <Text className={styles.data}>
-                    Wind speed: {windSpeed} {windSpeedUnit}
-                </Text>
+                <Text className={styles.data}>Wind speed: {windSpeed + windSpeedUnit}</Text>
             </div>
         </div>
     );

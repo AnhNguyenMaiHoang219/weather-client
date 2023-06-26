@@ -113,7 +113,7 @@ export const WeatherItemDetail = ({
                             <Row justify="center">
                                 <Statistic
                                     title="Max temperature"
-                                    value={`${maxTemperature} ${temperatureSymbol}`}
+                                    value={maxTemperature + temperatureSymbol}
                                 />
                             </Row>
                         </Col>
@@ -121,7 +121,7 @@ export const WeatherItemDetail = ({
                             <Row justify="center">
                                 <Statistic
                                     title="Min temperature"
-                                    value={`${minTemperature} ${temperatureSymbol}`}
+                                    value={minTemperature + temperatureSymbol}
                                 />
                             </Row>
                         </Col>
@@ -129,7 +129,7 @@ export const WeatherItemDetail = ({
                             <Row justify="center">
                                 <Statistic
                                     title="Wind speed"
-                                    value={`${maxWindSpeed} ${windSpeedUnit}`}
+                                    value={maxWindSpeed + windSpeedUnit}
                                 />
                             </Row>
                         </Col>
