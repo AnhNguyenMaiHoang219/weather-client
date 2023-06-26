@@ -45,16 +45,18 @@ export const WeatherItem = ({
     return (
         <>
             <div className={`${styles.container} ${today ? styles.active : ''}`} onClick={onClick}>
-                <h6 className={styles.date}>{today ? 'Today' : displayDate}</h6>
-                <Image
-                    className={styles.image}
-                    src={weatherStatusImageUrl}
-                    alt={weatherStatusDescription}
-                    title={weatherStatusDescription}
-                    width={96}
-                    height={96}
-                    unoptimized
-                />
+                <div className={styles.frontContainer}>
+                    <h6 className={styles.date}>{today ? 'Today' : displayDate}</h6>
+                    <Image
+                        className={styles.image}
+                        src={weatherStatusImageUrl}
+                        alt={weatherStatusDescription}
+                        title={weatherStatusDescription}
+                        width={96}
+                        height={96}
+                        unoptimized
+                    />
+                </div>
                 <Paragraph className={styles.description}>{weatherStatusDescription}</Paragraph>
                 <div className={styles.temperatureContainer}>
                     <Paragraph className={styles.temp}>
