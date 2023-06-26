@@ -1,3 +1,8 @@
+@import 'mixin.module';
+
+$weather-status-icon__size: 16rem;
+$weather-status-icon__size-small: 11rem;
+
 .container {
     display: flex;
     flex-direction: column;
@@ -8,7 +13,13 @@
 
 .weatherConditionImage {
     align-self: center;
-    max-width: 16rem;
+    width: $weather-status-icon__size;
+    height: $weather-status-icon__size;
+
+    @include respond-below(sm) {
+        width: $weather-status-icon__size-small;
+        height: $weather-status-icon__size-small;
+    }
 }
 
 :global(.ant-typography).temperature {
@@ -49,4 +60,36 @@
     font-size: 1rem;
     margin-top: -0.5rem;
     margin-bottom: 0;
+}
+
+// Skeleton loader
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    > :global(.ant-skeleton-element) {
+        &.image {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            align-items: center;
+            width: $weather-status-icon__size;
+            height: $weather-status-icon__size;
+
+            @include respond-below(sm) {
+                width: $weather-status-icon__size-small;
+                height: $weather-status-icon__size-small;
+            }
+        }
+
+        &.temperature {
+            margin-bottom: 1.2rem;
+        }
+
+        &.description {
+            padding-top: 0.4rem;
+        }
+    }
 }

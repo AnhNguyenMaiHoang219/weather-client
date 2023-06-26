@@ -1,8 +1,9 @@
 @import 'antd/dist/reset.css';
+@import 'variable.module';
 
 html,
 body {
     width: 100vw;
     overflow-x: hidden;
-    background: #f7f6f9;
+    background: $main-background-color;
 }

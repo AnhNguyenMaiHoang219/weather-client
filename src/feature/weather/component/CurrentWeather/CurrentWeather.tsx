@@ -5,6 +5,7 @@ import format from 'date-fns/format';
 import Image from 'next/image';
 import { getWeatherConditionDescription, getWeatherConditionImage } from '../../util';
 import { useWeatherStore } from '../../weather-store';
+import { Loader } from './Loader';
 import styles from './current-weather.module.scss';
 
 const { Text, Title, Paragraph } = Typography;
@@ -17,7 +18,7 @@ export const CurrentWeather = ({}: Props) => {
     const windSpeedUnit = useWeatherStore(state => state.windSpeedUnit);
 
     if (!currentWeather) {
-        return <></>;
+        return <Loader />;
     }
 
     const { temperature, windSpeed, weatherCode, isDay } = currentWeather;
