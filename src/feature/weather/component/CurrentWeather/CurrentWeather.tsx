@@ -33,14 +33,16 @@ export const CurrentWeather = ({}: Props) => {
                 src={weatherStatusImageUrl}
                 alt={weatherStatusDescription}
                 title={weatherStatusDescription}
-                width={256}
-                height={256}
+                width={200}
+                height={200}
             />
             <Text className={styles.temperature}>
                 <span className={styles.number}>{temperature}</span>
                 <span className={styles.symbol}>{temperatureSymbol}</span>
             </Text>
-            <h6 className={styles.date}>{displayDate}</h6>
+            <Title className={styles.date} level={5}>
+                {displayDate}
+            </Title>
             <Paragraph className={styles.description}>{weatherStatusDescription}</Paragraph>
 
             <Divider />
