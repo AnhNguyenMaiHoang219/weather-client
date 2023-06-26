@@ -7,8 +7,9 @@ const Area = dynamic(() => import('@ant-design/charts').then(mod => mod.Area), {
 });
 
 import { AreaConfig } from '@ant-design/charts';
-import { Col, Image, Modal, Row, Statistic, Typography } from 'antd';
+import { Col, Modal, Row, Statistic, Typography } from 'antd';
 import format from 'date-fns/format';
+import Image from 'next/image';
 import { shallow } from 'zustand/shallow';
 import { DEFAULT_CHART_CONFIG } from '../../constant';
 import { getWeatherConditionDescription, getWeatherConditionImage, toHour } from '../../util';
@@ -92,7 +93,15 @@ export const WeatherItemDetail = ({
             <Row gutter={[12, 12]}>
                 <Col span={24}>
                     <Row justify="center">
-                        <Image width={150} src={weatherStatusImageUrl} />
+                        <Image
+                            className={styles.weatherConditionImage}
+                            src={weatherStatusImageUrl}
+                            alt={weatherStatusDescription}
+                            title={weatherStatusDescription}
+                            width={150}
+                            height={150}
+                            unoptimized
+                        />
                     </Row>
                     <Row justify="center">
                         <Title level={4}>{weatherStatusDescription}</Title>

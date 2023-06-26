@@ -52,6 +52,7 @@ export const WeatherItem = ({
                     title={weatherStatusDescription}
                     width={96}
                     height={96}
+                    unoptimized
                 />
                 <Paragraph className={styles.description}>{weatherStatusDescription}</Paragraph>
                 <div className={styles.temperatureContainer}>
