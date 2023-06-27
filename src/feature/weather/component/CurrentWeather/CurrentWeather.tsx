@@ -10,9 +10,7 @@ import styles from './current-weather.module.scss';
 
 const { Text, Title, Paragraph } = Typography;
 
-interface Props {}
-
-export const CurrentWeather = ({}: Props) => {
+export const CurrentWeather = () => {
     const currentWeather = useWeatherStore(state => state.currentWeather);
     const temperatureSymbol = useWeatherStore(state => state.temperatureSymbol);
     const windSpeedUnit = useWeatherStore(state => state.windSpeedUnit);
