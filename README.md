@@ -16,6 +16,7 @@ The live version of the application is available at https://weather-client-blond
 - [Ant Design](https://ant.design/): Design system + React UI components
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction/): React state management library
 - [date-fns](https://date-fns.org/): Date utility library
+- [Jest](https://jestjs.io/) + [React Testing library](https://testing-library.com/): React test runner and framework
 
 ## Integration services and credits
 
