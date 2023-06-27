@@ -2,6 +2,8 @@
 
 A simple Web application displaying current weather and weather forecast data including hourly chart and daily table
 
+The live version of the application is available at https://weather-client-blond.vercel.app/
+
 ## Prerequisites
 
 - [Node.js 18.16](https://nodejs.org/en/) or later
@@ -14,6 +16,7 @@ A simple Web application displaying current weather and weather forecast data in
 - [Ant Design](https://ant.design/): Design system + React UI components
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction/): React state management library
 - [date-fns](https://date-fns.org/): Date utility library
+- [Jest](https://jestjs.io/) + [React Testing library](https://testing-library.com/): React test runner and framework
 
 ## Integration services and credits
 
@@ -68,9 +71,7 @@ npm run test
 
 ### e2e tests
 
-```sh
-npm run test:e2e
-```
+TBD
 
 ## Documentation
 
