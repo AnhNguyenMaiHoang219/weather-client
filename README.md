@@ -2,6 +2,8 @@
 
 A simple Web application displaying current weather and weather forecast data including hourly chart and daily table
 
+The live version of the application is available at https://weather-client-blond.vercel.app/
+
 ## Prerequisites
 
 - [Node.js 18.16](https://nodejs.org/en/) or later
@@ -68,9 +70,7 @@ npm run test
 
 ### e2e tests
 
-```sh
-npm run test:e2e
-```
+TBD
 
 ## Documentation
 
