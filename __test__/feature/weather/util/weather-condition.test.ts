@@ -13,7 +13,7 @@ describe('Weather condition util', () => {
             [100, true, ''],
             [100, false, ''],
         ])(
-            'with weather code "%p" expecting correct small (@2x.png) image url "%p" is returned',
+            'Given weather code "%p" and isDay param is "%p", then expecting small (@2x.png) image url %p is returned',
             (weatherCode: WeatherCode, isDay, expectedResult: string) => {
                 expect(getWeatherConditionImage(weatherCode, 'small', isDay)).toEqual(
                     expectedResult,
@@ -31,7 +31,7 @@ describe('Weather condition util', () => {
             [100, true, ''],
             [100, false, ''],
         ])(
-            'with weather code "%p" expecting correct large (@4x.png) image url "%p" is returned',
+            'Given weather code "%p" and isDay param is "%p", then expecting large (@4x.png) image url %p is returned',
             (weatherCode: WeatherCode, isDay, expectedResult: string) => {
                 expect(getWeatherConditionImage(weatherCode, 'large', isDay)).toEqual(
                     expectedResult,
@@ -51,7 +51,7 @@ describe('Weather condition util', () => {
             [100, true, 'Unknown description'],
             [100, false, 'Unknown description'],
         ])(
-            'with weather code "%p" expecting correct image url %p',
+            'Given weather code "%p" and isDay param is "%p", then expecting weather description %p is returned',
             (weatherCode: WeatherCode, isDay, expectedResult: string) => {
                 expect(getWeatherConditionDescription(weatherCode, isDay)).toEqual(expectedResult);
             },
