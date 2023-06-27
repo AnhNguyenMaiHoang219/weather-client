@@ -25,6 +25,14 @@ The live version of the application is available at https://weather-client-hoang
 - [Meteocons](https://basmilius.github.io/weather-icons/index-fill.html): Weather icons by [Bas Milius](https://bas.dev/)
 - [Sass mixins](https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/): Very useful Sass mixins for responsive styling
 
+## Documentation
+
+Please check the following document files below for details
+
+- [Application features](https://github.com/AnhNguyenMaiHoang219/weather-client/blob/main/docs/application-features.md)
+- [Known issues](https://github.com/AnhNguyenMaiHoang219/weather-client/blob/main/docs/known-issues.md)
+- [Future plans](https://github.com/AnhNguyenMaiHoang219/weather-client/blob/main/docs/future-plans.md)
+
 ## Installation instruction
 
 - Clone this repository.
@@ -70,9 +78,5 @@ npm run test
 ```
 
 ### e2e tests
-
-TBD
-
-## Documentation
 
 TBD
