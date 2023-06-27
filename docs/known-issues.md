@@ -4,7 +4,7 @@
 
 - Regarding the current weather data section: Lack of essential data like humidity, wind direction, atmosphere pressure
 - All the weather data currently belong to Oulu, Finland (latitude is 65.01 & longitude is 25.47)
-- The selection of temperature unit has not been persisted on page reload
+- The selection of the temperature unit has not persisted on the page reload
 
 ## Accessibility
 
