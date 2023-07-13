@@ -8,7 +8,7 @@ function getWeatherConditionImage(code: WeatherCode, size: 'small' | 'large', is
         return '';
     }
 
-    const iconSize = size == 'small' ? '@2x' : '@4x';
+    const iconSize = size === 'small' ? '@2x' : '@4x';
     const iconCode = `${weatherIconObject.code}${isDay ? 'd' : 'n'}`;
     const iconPath = `${iconCode}${iconSize}.png`;
 

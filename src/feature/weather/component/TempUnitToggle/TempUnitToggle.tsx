@@ -21,7 +21,7 @@ export const TempUnitToggle = ({ className, ...props }: RadioGroupProps) => {
     return (
         <Tooltip placement="bottomRight" title="Switch temperature unit" mouseEnterDelay={0.3}>
             <Radio.Group
-                className={`temp-unit-toggle ${styles.toggle} ${className}`}
+                className={`${styles.toggle} ${className || ''}`}
                 options={options}
                 onChange={onChange}
                 value={temperatureUnit}

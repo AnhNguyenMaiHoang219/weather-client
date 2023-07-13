@@ -94,7 +94,6 @@ export const WeatherItemDetail = ({
                 <Col span={24}>
                     <Row justify="center">
                         <Image
-                            className={styles.weatherConditionImage}
                             src={weatherStatusImageUrl}
                             alt={weatherStatusDescription}
                             title={weatherStatusDescription}

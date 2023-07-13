@@ -32,7 +32,7 @@ function buildHourlyTempList(times: string[], temperatures: number[]): HourlyRec
     }));
 }
 
-function buildDailyTempList(
+function buildDailyDataList(
     times: string[],
     weatherCodes: number[],
     maxTemperatures: number[],
@@ -41,7 +41,6 @@ function buildDailyTempList(
     maxWindSpeeds: number[],
 ): DailyRecord[] {
     if (
-        times.length !== weatherCodes.length ||
         times.length !== weatherCodes.length ||
         times.length !== maxTemperatures.length ||
         times.length !== minTemperatures.length ||
@@ -72,7 +71,7 @@ function toWindSpeedUnit(windSpeedQuery: WindSpeedQuery): string {
 
 export {
     buildCurrentWeatherData,
-    buildDailyTempList,
+    buildDailyDataList,
     buildHourlyTempList,
     toTemperatureSymbol,
     toWindSpeedUnit,

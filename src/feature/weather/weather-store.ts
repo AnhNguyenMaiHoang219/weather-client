@@ -7,7 +7,7 @@ import { trimTemplate } from '../common/util';
 import { CurrentWeather, DailyRecord, HourlyRecord } from './type';
 import {
     buildCurrentWeatherData,
-    buildDailyTempList,
+    buildDailyDataList,
     buildHourlyTempList,
     toTemperatureSymbol,
     toWindSpeedUnit,
@@ -78,7 +78,7 @@ const useWeatherStore = create(
                 set(state => {
                     state.currentWeather = buildCurrentWeatherData(current_weather);
                     state.hourlyData = buildHourlyTempList(hourly.time, hourly.temperature_2m);
-                    state.dailyData = buildDailyTempList(
+                    state.dailyData = buildDailyDataList(
                         daily.time,
                         daily.weathercode,
                         daily.temperature_2m_max,
