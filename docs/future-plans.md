@@ -21,4 +21,4 @@ Because of the time limitation of the assignment, not all features and improveme
 - Improve unit test coverage by adding more tests to essential util functions and React components
 - End-to-End (E2E) testing
   - Configure [Cypress](https://nextjs.org/docs/pages/building-your-application/optimizing/testing#cypress) as the E2E testing framework.
-  - Add some E2E testing to the home page.
+  - Add some E2E tests for the home page.

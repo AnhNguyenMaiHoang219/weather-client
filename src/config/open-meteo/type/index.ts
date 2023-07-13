@@ -8,8 +8,8 @@ interface CurrentWeatherResponse {
 }
 
 interface ForecastResponse {
-    latitude: string;
-    longitude: string;
+    latitude: number;
+    longitude: number;
     current_weather: CurrentWeatherResponse;
     hourly: {
         time: string[];
