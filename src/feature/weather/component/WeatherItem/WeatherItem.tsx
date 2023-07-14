@@ -5,7 +5,7 @@ import format from 'date-fns/format';
 import isToday from 'date-fns/isToday';
 import Image from 'next/image';
 import { useState } from 'react';
-import { getWeatherConditionDescription, getWeatherConditionImage } from '../../util';
+import { getWeatherConditionDescription, getWeatherConditionMeteoIcon } from '../../util';
 import { useWeatherStore } from '../../weather-store';
 import { WeatherItemDetail } from '../WeatherItemDetail';
 import styles from './weather-item.module.scss';
@@ -34,7 +34,7 @@ export const WeatherItem = ({
     const date = new Date(dateProp);
     const today = isToday(date);
     const displayDate = format(date, 'EEE, MMM dd');
-    const weatherStatusImageUrl = getWeatherConditionImage(weatherCode, 'large');
+    const weatherStatusImageUrl = getWeatherConditionMeteoIcon(weatherCode);
     const weatherStatusDescription = getWeatherConditionDescription(weatherCode);
     const temperatureSymbol = useWeatherStore(state => state.temperatureSymbol);
 

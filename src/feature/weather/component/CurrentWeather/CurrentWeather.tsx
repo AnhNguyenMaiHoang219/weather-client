@@ -3,7 +3,7 @@
 import { Divider, Typography } from 'antd';
 import format from 'date-fns/format';
 import Image from 'next/image';
-import { getWeatherConditionDescription, getWeatherConditionImage } from '../../util';
+import { getWeatherConditionDescription, getWeatherConditionMeteoIcon } from '../../util';
 import { useWeatherStore } from '../../weather-store';
 import { Loader } from './Loader';
 import styles from './current-weather.module.scss';
@@ -21,7 +21,7 @@ export const CurrentWeather = () => {
 
     const { temperature, windSpeed, weatherCode, isDay } = currentWeather;
     const displayDate = format(new Date(), 'EEEE, H:mm');
-    const weatherStatusImageUrl = getWeatherConditionImage(weatherCode, 'large', isDay);
+    const weatherStatusImageUrl = getWeatherConditionMeteoIcon(weatherCode, isDay);
     const weatherStatusDescription = getWeatherConditionDescription(weatherCode, isDay);
 
     return (
@@ -49,7 +49,7 @@ export const CurrentWeather = () => {
             <div className={styles.weatherDataContainer}>
                 <Image
                     className={styles.icon}
-                    src="/image/weather/windsock.svg"
+                    src="/image/weather-icon/windsock.svg"
                     alt={weatherStatusDescription}
                     title={weatherStatusDescription}
                     width={48}
