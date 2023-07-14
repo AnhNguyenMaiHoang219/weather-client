@@ -12,7 +12,7 @@ import format from 'date-fns/format';
 import Image from 'next/image';
 import { shallow } from 'zustand/shallow';
 import { DEFAULT_CHART_CONFIG } from '../../constant';
-import { getWeatherConditionDescription, getWeatherConditionImage, toHour } from '../../util';
+import { getWeatherConditionDescription, getWeatherConditionMeteoIcon, toHour } from '../../util';
 import { useWeatherStore } from '../../weather-store';
 import styles from './weather-item-detail.module.scss';
 
@@ -52,7 +52,7 @@ export const WeatherItemDetail = ({
     );
 
     const displayDate = format(new Date(date), 'EEE, MMM dd');
-    const weatherStatusImageUrl = getWeatherConditionImage(weatherCode, 'large');
+    const weatherStatusImageUrl = getWeatherConditionMeteoIcon(weatherCode);
     const weatherStatusDescription = getWeatherConditionDescription(weatherCode);
 
     const config: AreaConfig = {

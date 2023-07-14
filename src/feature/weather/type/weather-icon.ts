@@ -1,3 +1,8 @@
+interface WeatherMeteocons {
+    image: string;
+    description: WeatherIconDescription;
+}
+
 interface WeatherIcon {
     code: string;
     description: WeatherIconDescription;
@@ -8,4 +13,4 @@ interface WeatherIconDescription {
     night: string;
 }
 
-export type { WeatherIcon, WeatherIconDescription };
+export type { WeatherIcon, WeatherIconDescription, WeatherMeteocons };

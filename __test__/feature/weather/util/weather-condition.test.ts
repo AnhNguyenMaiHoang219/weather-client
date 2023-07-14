@@ -1,8 +1,34 @@
 import { OpenMeteoWeatherCode as WeatherCode } from '@/feature/weather/type';
-import { getWeatherConditionDescription, getWeatherConditionImage } from '@/feature/weather/util';
+import {
+    getWeatherConditionDescription,
+    getWeatherConditionImage,
+    getWeatherConditionMeteoIcon,
+} from '@/feature/weather/util';
 
 describe('Weather condition util', () => {
-    describe('Test getWeatherConditionImage method', () => {
+    describe('Test "getWeatherConditionMeteoIcon" method', () => {
+        it.each([
+            [WeatherCode.CLEAR_SKY, true, '/image/weather-icon/clear-day.svg'],
+            [WeatherCode.CLEAR_SKY, false, '/image/weather-icon/clear-night.svg'],
+            [WeatherCode.MAINLY_CLEAR, true, '/image/weather-icon/clear-day.svg'],
+            [WeatherCode.MAINLY_CLEAR, false, '/image/weather-icon/clear-night.svg'],
+            [WeatherCode.PARTLY_CLOUDY, true, '/image/weather-icon/partly-cloudy-day.svg'],
+            [WeatherCode.PARTLY_CLOUDY, false, '/image/weather-icon/partly-cloudy-night.svg'],
+            [WeatherCode.LIGHT_DRIZZLE, true, '/image/weather-icon/drizzle-light-day.svg'],
+            [WeatherCode.LIGHT_DRIZZLE, false, '/image/weather-icon/drizzle-light-night.svg'],
+            [WeatherCode.HEAVY_RAIN, true, '/image/weather-icon/rain-heavy-day.svg'],
+            [WeatherCode.HEAVY_RAIN, false, '/image/weather-icon/rain-heavy-night.svg'],
+            [100, true, '/image/weather-icon/not-available.svg'],
+            [100, false, '/image/weather-icon/not-available.svg'],
+        ])(
+            'Given weather code "%p" and isDay param is "%p", then expecting image path %p is returned',
+            (weatherCode: WeatherCode, isDay, expectedResult: string) => {
+                expect(getWeatherConditionMeteoIcon(weatherCode, isDay)).toEqual(expectedResult);
+            },
+        );
+    });
+
+    describe('Test "getWeatherConditionImage" method', () => {
         it.each([
             [WeatherCode.CLEAR_SKY, true, 'https://openweathermap.org/img/wn/01d@2x.png'],
             [WeatherCode.CLEAR_SKY, false, 'https://openweathermap.org/img/wn/01n@2x.png'],
@@ -40,7 +66,7 @@ describe('Weather condition util', () => {
         );
     });
 
-    describe('Test getWeatherConditionDescription method', () => {
+    describe('Test "getWeatherConditionDescription" method', () => {
         it.each([
             [WeatherCode.CLEAR_SKY, true, 'Sunny'],
             [WeatherCode.CLEAR_SKY, false, 'Clear'],
